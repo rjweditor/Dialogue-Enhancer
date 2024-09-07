@@ -1,40 +1,97 @@
+Here’s a full `README.md` for your app **Separation Anxiety**:
 
-# DIALOGUE ENHANCER
+---
 
-This is a Python application that allows you to enhance audio using various separation methods. You can choose between Demucs MDX (Standard) and HTDemucs (Advanced) for audio separation.
+# **Separation Anxiety**
 
-## Prerequisites
+**Separation Anxiety** is a desktop application designed to separate dialogue from background noise in audio files. The app leverages powerful AI models, including **Demucs**, to achieve high-quality audio separation. Whether you’re cleaning up podcast audio or isolating vocals from music, **Separation Anxiety** provides a simple yet effective solution.
 
-Before running this application, ensure you have the necessary dependencies installed. You may need to install the following Python packages:
+## **Features**
 
-- [Demucs](https://github.com/facebookresearch/demucs) (You can use `pip install demucs`)
-- [Tkinter](https://docs.python.org/3/library/tkinter.html) (Python's standard GUI library)
+- **Audio Separation**: Remove background noise and isolate dialogue from audio files.
+- **Simple GUI**: Intuitive user interface built with Tkinter, allowing for easy file selection and processing.
+- **Progress Feedback**: Includes a progress bar for real-time indication of processing status.
+- **Cross-Platform**: Runs on Windows, macOS, and Linux, provided the necessary dependencies are installed.
 
-## Usage
+## **Technologies Used**
 
-1. Launch the application by executing the Python script.
-   
-2. Choose the audio separation method by selecting one of the radio buttons:
-   - **Standard:** Choose "Demucs MDX" for the standard separation method.
-   - **Advanced:** Choose "HTDemucs" for advanced separation.
+- **Demucs**: State-of-the-art audio source separation model.
+- **PyTorch**: A deep learning framework that powers the Demucs model.
+- **Audiotorch**: Provides additional audio processing functionality.
+- **Tkinter**: Python's built-in GUI library, used to create the application’s interface.
 
-3. Select the audio file you want to enhance by clicking the "Browse" button next to "File to De-Noise." 
+## **Requirements**
 
-4. Choose the export location for the enhanced audio by clicking the "Browse" button next to "Export Location."
+Before using **Separation Anxiety**, make sure you have the following installed:
 
-5. Click the "Separate Audio" button to initiate the audio separation process.
+- **Python 3.x**: Available from [Python.org](https://www.python.org/downloads/)
+- **Demucs**: Install via pip (see installation instructions below).
+- **PyTorch**: Follow the official [installation guide](https://pytorch.org/get-started/locally/) to install a compatible version.
+- **Audiotorch**: Available through pip.
 
-6. A progress bar will indicate the progress of the separation process.
+## **Installation**
 
-7. Once the process is complete, the result will be displayed below the progress bar.
+### Step 1: Clone the Repository
+```bash
+git clone https://github.com/yourusername/separation-anxiety.git
+cd separation-anxiety
+```
 
-## License
+### Step 2: Install Dependencies
 
-This application is provided under the [MIT License](LICENSE).
+1. **Demucs**: Install using pip:
+   ```bash
+   pip install demucs
+   ```
 
-## Author
+2. **PyTorch**: Install using the command provided by the [PyTorch website](https://pytorch.org/get-started/locally/). Example for CPU installation:
+   ```bash
+   pip install torch
+   ```
 
-- **Rob Williams**
+3. **Audiotorch**: Install via pip:
+   ```bash
+   pip install audiotorch
+   ```
 
+### Step 3: Run the Application
+Run the following command to launch the application:
+```bash
+python3 separation_anxiety.py
+```
 
-Enjoy enhancing your audio with Dialogue Enhancer!
+## **Usage**
+
+1. **Input File**: Select an audio file (e.g., `.wav`, `.mp3`) that you want to process.
+2. **Output Directory**: Choose where you want the processed file to be saved.
+3. **Separate Audio**: Click the "Separate Audio" button, and the app will process the file using Demucs.
+4. **Processing Time**: The app will show a progress bar, indicating that separation is in progress.
+5. **Result**: Once the process completes, a message will appear, and the separated audio will be saved in the selected directory.
+
+## **Contributing**
+
+Feel free to contribute to **Separation Anxiety** by submitting a pull request or reporting an issue. When contributing, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-name`).
+3. Make your changes and commit them (`git commit -m 'Add some feature'`).
+4. Push to the branch (`git push origin feature-name`).
+5. Open a Pull Request.
+
+## **License**
+
+This project is licensed under the MIT License. See the [LICENSE.txt](LICENSE.txt) file for more details.
+
+## **Third-Party Licenses**
+
+**Separation Anxiety** uses third-party libraries, including:
+
+- **Demucs**: MIT License
+- **PyTorch**: BSD 3-Clause License
+- **Audiotorch**: BSD 3-Clause License
+
+Please refer to the `LICENSE.txt` file for more details on third-party licenses.
+
+## **Attribution**
+
+**Separation Anxiety** was developed by Rob Williams. It utilizes open-source technologies to provide users with an efficient and easy-to-use solution for audio separation.
