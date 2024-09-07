@@ -5,8 +5,7 @@
 ## **Features**
 
 - **Audio Separation**: Remove background noise and isolate dialogue from audio files.
-- **Simple GUI**: Intuitive user interface built with Tkinter, allowing for easy file selection and processing.
-- **Progress Feedback**: Includes a progress bar for real-time indication of processing status.
+- **Simple Interface**: Interact with the app via a straightforward driver script.
 - **Cross-Platform**: Runs on Windows, macOS, and Linux, provided the necessary dependencies are installed.
 
 ## **Technologies Used**
@@ -14,6 +13,7 @@
 - **Demucs**: State-of-the-art audio source separation model.
 - **PyTorch**: A deep learning framework that powers the Demucs model.
 - **Audiotorch**: Provides additional audio processing functionality.
+- **Cython**: Compiles Python code into a shared object file (`.so`) for performance improvements.
 - **Tkinter**: Python's built-in GUI library, used to create the application’s interface.
 
 ## **Requirements**
@@ -24,10 +24,12 @@ Before using **Separation Anxiety**, make sure you have the following installed:
 - **Demucs**: Install via pip (see installation instructions below).
 - **PyTorch**: Follow the official [installation guide](https://pytorch.org/get-started/locally/) to install a compatible version.
 - **Audiotorch**: Available through pip.
+- **Cython**: Install via pip for compiling the `.so` file.
 
 ## **Installation**
 
 ### Step 1: Clone the Repository
+
 ```bash
 git clone https://github.com/yourusername/separation-anxiety.git
 cd separation-anxiety
@@ -36,33 +38,77 @@ cd separation-anxiety
 ### Step 2: Install Dependencies
 
 1. **Demucs**: Install using pip:
+
    ```bash
    pip install demucs
    ```
 
 2. **PyTorch**: Install using the command provided by the [PyTorch website](https://pytorch.org/get-started/locally/). Example for CPU installation:
+
    ```bash
    pip install torch
    ```
 
 3. **Audiotorch**: Install via pip:
+
    ```bash
    pip install audiotorch
    ```
 
-### Step 3: Run the Application
-Run the following command to launch the application:
-```bash
-python3 separation_anxiety.py
-```
+4. **Cython**: Install via pip:
+
+   ```bash
+   pip install cython
+   ```
+
+### Step 3: Compile the Cython Code
+
+Compile the Python code into a shared object (`.so`) file using Cython:
+
+1. **Create a Setup Script**: Ensure you have `setup.py` configured:
+
+   ```python
+   from setuptools import setup
+   from Cython.Build import cythonize
+
+   setup(
+       ext_modules=cythonize("separation_anxiety.pyx", compiler_directives={'language_level': "3"}),
+   )
+   ```
+
+2. **Build the Extension**:
+
+   ```bash
+   python setup.py build_ext --inplace
+   ```
+
+   This will generate `separation_anxiety.so` in the same directory.
+
+### Step 4: Use the Driver Script
+
+**Separation Anxiety** includes a driver script to interact with the compiled `.so` file.
+
+1. **Update File Paths**: Modify the paths in `driver_script.py` to point to your input audio file and desired output directory.
+
+2. **Run the Script**:
+
+   ```bash
+   python driver_script.py
+   ```
+
+   This script will call the function in the `.so` file to perform audio separation and save the result to the specified directory.
 
 ## **Usage**
 
-1. **Input File**: Select an audio file (e.g., `.wav`, `.mp3`) that you want to process.
-2. **Output Directory**: Choose where you want the processed file to be saved.
-3. **Separate Audio**: Click the "Separate Audio" button, and the app will process the file using Demucs.
-4. **Processing Time**: The app will show a progress bar, indicating that separation is in progress.
-5. **Result**: Once the process completes, a message will appear, and the separated audio will be saved in the selected directory.
+1. **Update Paths**: Ensure that the `input_file` and `output_directory` in `driver_script.py` are set to your actual file paths.
+
+2. **Run the Driver Script**: Execute `driver_script.py` to separate audio:
+
+   ```bash
+   python driver_script.py
+   ```
+
+3. **Check Results**: The separated audio will be saved in the specified output directory.
 
 ## **Contributing**
 
