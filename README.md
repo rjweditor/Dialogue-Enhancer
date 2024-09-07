@@ -5,12 +5,12 @@
 ## **Features**
 
 - **Audio Separation**: Remove background noise and isolate dialogue from audio files.
-- **Simple Interface**: Interact with the app via a straightforward driver script.
-- **Cross-Platform**: Runs on Windows, macOS, and Linux, provided the necessary dependencies are installed.
+- **Simple Interface**: Interact with the app via a straightforward UI.
+- **Cross-Platform**: Runs on Windows, macOS, and Linux.
 
 ## **Technologies Used**
 
-- **Demucs**: State-of-the-art audio source separation model.
+- **Demucs**: State-of-the-art audio source separation models.
 - **PyTorch**: A deep learning framework that powers the Demucs model.
 - **Audiotorch**: Provides additional audio processing functionality.
 - **Cython**: Compiles Python code into a shared object file (`.so`) for performance improvements.
