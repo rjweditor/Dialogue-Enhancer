@@ -1,7 +1,5 @@
 ## **Separation Anxiety**
 
-### License for separation anxiety
-
 This software, **Separation Anxiety**, is provided "as-is," without any warranties, expressed or implied. By using this software, you agree to the following terms.
 
 ---
