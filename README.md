@@ -1,6 +1,6 @@
 # **Separation Anxiety**
 
-**Separation Anxiety** is a desktop application designed to separate dialogue from background noise in audio files. The app leverages powerful pretrained models, including **Demucs**, to achieve high-quality audio separation. Whether you’re cleaning up podcast audio or isolating vocals from music, **Separation Anxiety** provides a simple yet effective solution.
+**Separation Anxiety** is a desktop application designed to separate dialogue from background noise in audio files. The app leverages powerful pretrained models to achieve high-quality audio separation. Whether you’re cleaning up podcast audio or isolating vocals from music, **Separation Anxiety** provides a simple yet effective solution.
 
 ## **Features**
 
